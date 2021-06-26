@@ -1,0 +1,157 @@
+.app-nav{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #fff;    
+    z-index: 1;
+    a{
+        text-decoration: none;
+    }
+    .logo{
+        padding-left: 40px;
+        img{
+            height: 19px;
+            width: 145px;
+        }
+        .back-icon{
+            display: flex;
+            align-items: center;
+            padding: 4px 0;
+            .icon{
+                content: "";
+                width: 14px;
+                height: 9px;
+                background: url(https://www.codigo.co/img/icons/arrow-red.svg);
+                background-size: cover;
+                display: inline-block;
+                transform: scaleX(-1);
+                margin-right: 10px;
+            }
+            .back-txt{
+                position: relative;
+                margin: 0;
+            }
+            .back-txt::before{
+                content: "";
+                width: 0;
+                height: 1px;
+                background: #000;
+                display: inline-block;
+                position: absolute;
+                top: calc(100% + 3px);
+                left: -1px;
+                transition: .5s cubic-bezier(.4,.6,.6,1);
+            
+            }
+            .back-txt:hover::before{
+                width: 100%;
+                transition: .4s cubic-bezier(.2,.6,.4,1);
+            }
+        }
+    }
+    .nav-list{
+        padding-right: 30px;
+        .mobile-btn{
+            display: none;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            align-items: center;
+            img{
+                width: 30px;
+                height: 30px;
+            }
+        }
+        ul{
+            display: flex;
+            list-style: none;
+            margin: 0;
+            li{
+                padding: 14px 26px;
+                a{
+                    text-decoration: none;                    
+                }
+            }
+            li.quote{
+                padding: 0;
+            }
+            li:hover {                
+                color: #1f1f1f;
+                font-weight: bold;
+            }
+            li.mobile{
+                display: none;
+            }
+            .detail{
+                display: none;
+            }
+            button{
+                background-color: #3a2837;
+                font-size: 14px;
+                padding: 14px 17px;
+                border-radius: 30px;
+                color: #fff;     
+                border: 0;           
+            }
+        }
+    }
+}
+@media screen and (max-width: 980px) {
+    .app-nav .nav-list ul {        
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: rgb(213, 51, 62);        
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;     
+        flex-direction: column;     
+        align-items: center;        
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 160px;
+    }
+    .app-nav .nav-list ul.open{
+        width: 100%;
+    }
+    .app-nav .nav-list ul li a{
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+    }
+    .app-nav .nav-list ul li.quote{
+        display: none;
+    }
+    .app-nav .nav-list ul li.mobile{
+        display: block;
+    }
+    .app-nav .nav-list ul li.detail{
+        display: block;
+    }
+    .app-nav .nav-list .mobile-btn {        
+        display: block;
+    }  
+    .app-nav .nav-list .mobile-btn{
+        position: absolute;
+        right: 20px;
+        z-index: 20;
+        top: 28px;
+    }  
+}
+@media screen and (max-width: 600px) {
+    .app-nav .nav-list{
+        padding-right: 14px;
+    }
+    .app-nav .nav-list .mobile-btn {        
+        display: block;
+        padding-right: 10px;
+    }    
+}

@@ -1,0 +1,90 @@
+
+// .cat-item::after {
+//     position: absolute;
+//     bottom: 0;
+//     margin-left: 10px;
+//     padding: 6px 8px;
+//     max-width: calc((100%) - 60px);
+//     font-size: 12px;
+//     font-weight: 700;
+//     color: #fff;
+//     border: 1px solid red;
+//     background-color: rgba(0, 0, 0, 0.4);
+//     box-sizing: border-box;
+// }
+.cat-item{
+    min-height: 468px;    
+    position: relative;
+    overflow: hidden;
+    animation-delay: 0.235131s;
+    animation-duration: 2s;        
+    .title{
+        position: absolute;        
+        z-index: 200;
+        h5{
+            font-weight: bold;
+            color: #fff;
+            font-size: 30px;
+            padding-left: 30px;
+            margin: 0;
+        }
+        p{
+            color: #fff;
+            padding-left: 30px;
+        }
+    }
+    img{
+        width: 100%;
+        transition: transform 1.25s,opacity 2.5s;
+        backface-visibility: visible;
+        height: 100%;        
+    }    
+}
+
+.cat-item:after {
+    content:'\A';
+    position:absolute;
+    width:100%; height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.6);
+    opacity:0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.cat-item:hover:after {
+    opacity:1;
+}
+
+.cat-item:hover{
+    img{
+        transform: scale3d(1.1,1.1,1.1);
+      
+        opacity: .85;
+    }
+   
+}
+
+.Singapore{
+    grid-column: span 2;
+}
+.League{
+    grid-column: span 2;
+}
+.FastFast{
+    grid-column: span 2;
+}
+.Charles{
+    grid-column: span 2;
+}
+.FairPrice{
+    grid-column: span 2;
+}
+.reward{
+    grid-column: span 2;
+}
+
+@media screen and (max-width: 600px) {
+    .cat-item{
+        min-height: 300px;  
+    }
+}
