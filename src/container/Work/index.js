@@ -39,9 +39,9 @@ const Work = () => {
       window.addEventListener('scroll', onScroll)
       listener = document.addEventListener('scroll', e => {
         let scrolled = document.scrollingElement.scrollTop;
-        // console.log("here is scrolled", scrolled)
+        
   
-        if (scrolled <= 120) {
+        if (scrolled <= 120 || scrolled === 0) {
        
           scrollNum && setBottomState(false)
           show && setShow(false);
@@ -50,6 +50,9 @@ const Work = () => {
         }
         if(scrolled >= 600) {
             setShow(true)
+        }
+        if(scrolled === 0) {
+          setShow(0);
         }
         
       });
@@ -64,6 +67,7 @@ const Work = () => {
 
         const router = useRouter();
         const { tags } = router.query;
+     
  
         return (
             <>

@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
 import alert from './alert';
-// import { getdonors } from './getdonors';
+import { work } from './getDetailWork';
 import { data } from './getData';
 export default combineReducers({
   alert,
-  data
+  data,
+  work
 });

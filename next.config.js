@@ -1,4 +1,5 @@
 const withSass = require('@zeit/next-sass');
+const withCss = require('@zeit/next-css');
 const withFonts = require('next-fonts');
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
@@ -6,6 +7,7 @@ const Dotenv = require('dotenv-webpack');
 module.exports = {
   webpack(config, ...args) {
     config = withSass().webpack(config, ...args);
+    config = withCss().webpack(config, ...args);
     config.plugins = config.plugins || [];
     config.plugins = [
       ...config.plugins,

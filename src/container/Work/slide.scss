@@ -1,11 +1,15 @@
 .WorkFilterContainer__mainWrapper {
-    height: 100vh;
+
     position: absolute;
     top: 0;
     // border: 1px solid red;
-    left: 0;
+    left: -10;
     display: inline-block;
     z-index: 100;
+    @media (max-width: 40rem) {
+      left: -36px;
+    }
+
 }
 
 .cat_list {
@@ -55,6 +59,9 @@
 .open {
     position: absolute;
     left: 20%;
+    @media (max-width: 38rem) {
+        left: 56%;
+    }
 
 }
 .close {
@@ -64,10 +71,19 @@
 }
 .clx_icon {
     transform: rotate(90deg);
+    @media (max-width: 38rem) {
+       transition: none;
+    }
+
 }
 .op_icon {
     transform: rotate(-90deg) translate3d(0,15px,0) scaleX(1);
+    @media (max-width: 38rem) {
+        transform: rotate(0deg);
+     }
 }
+
+
 .WorkFilterAndLegend__mainGridWrapper.WorkFilterAndLegend--isVertical {
     transform: translate3d(-100%, 0, 0);
     position: fixed;
@@ -86,6 +102,9 @@
     grid-template-rows: auto min-content auto min-content 60px;
     -ms-grid-columns: 50px auto 50px;
     grid-template-columns: 50px auto 50px;
+    @media (max-width: 38rem) {
+        width: 32vh;
+    }
 }
 
 .WorkFilterBallAnim--onboard {
@@ -101,6 +120,7 @@
     height: 80px;
     position: absolute;
     top: 88%;
+
     color: #fff;
     right: -50px;
     transform: translate3d(0,-50%,0);
@@ -116,10 +136,18 @@
         height: 90px;
         transition: .6s;
     }
+    @media (max-width: 40rem) {
+        line-height: 50;
+        right: -120px;
+        opacity: 1;
+       
+    }
+
 }
 
 
 .ball_text {
+    
     @media (min-width: 65rem) {
    
       line-height: 50;
@@ -130,6 +158,7 @@
         line-height: 50;
         opacity: 1;
     }
+  
 }
 
 

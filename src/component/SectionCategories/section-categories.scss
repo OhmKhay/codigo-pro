@@ -1,8 +1,10 @@
 .section-categories{    
+    perspective: 1000px;
     width: 100%;
     min-height: 50vh;
     display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 25% 25% 25% 25%;
     grid-template-columns: 25% 25% 25% 25%;
     grid-auto-flow: row dense;
  
@@ -37,6 +39,8 @@
         min-height: 50vh;
         display: grid;
         grid-template-columns: 50% 50%;
+        // -ms-grid-columns: 25% 25% 25% 25%;
+        // grid-template-columns: 25% 25% 25% 25%;
         grid-auto-flow: row dense;
     }
 }

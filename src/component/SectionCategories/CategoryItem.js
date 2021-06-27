@@ -1,39 +1,58 @@
-import React from 'react';
-import Fade from 'react-reveal/Fade';
-import AvailablePlatform from './AvailablePlatform';
+import React from "react";
+import Link from "next/link";
+import Fade from "react-reveal/Fade";
+import AvailablePlatform from "./AvailablePlatform";
 
-import './category-item.scss';
+import "./category-item.scss";
 
 const CategoryItem = (props) => {
-
-    return (
-      
-        <>
-          <Fade>
-
-<a href={`/work/${props.item.url}`} className={`cat-item ${props.item.name == '7Rewards' ? 'reward': props.item.name}`}> 
-
-<div className="title">
-    <p>{props.item.txt}</p>
-    <h5>{props.item.name}</h5>
-    
-</div>           
-
-
- <img src={props.item.bg_url} alt={props.item.name}/>            
-
-
-<AvailablePlatform 
-    mobile={props.item.mobile}
-    web={props.item.web}
-    setting={props.item.setting}
-/>        
-
-</a>
-</Fade> 
-        </>
-    
-    );    
-}
  
+  return (
+
+      <>
+        <Link  href={`/work/[slug]`} as={`/work/${props.item.slug}`}>
+          <a
+           
+            className={`cat-item  ${
+              props.item.name == "7Rewards" ? "reward" : props.item.name
+            }`}
+          >
+             <Fade>
+             <div className={`title`}>
+              <p
+                className={`${
+                  props.item.txt_color == "#000" ? "c_black" : "c_white"
+                }`}
+              >
+                {props.item.txt}
+              </p>
+              <h5
+                className={`${
+                  props.item.txt_color == "#000" ? "c_black" : "c_white"
+                }`}
+              >
+                {props.item.name}
+              </h5>
+            </div>
+
+            <img
+              className={"work_grid_bg"}
+              src={props.item.bg_url}
+              alt={props.item.name}
+            />
+
+            <AvailablePlatform
+              mobile={props.item.mobile}
+              web={props.item.web}
+              cms={props.item.cms}
+              ui_ux={props.item.ui_ux}
+            />
+             </Fade>
+          </a>
+        </Link>
+      </>
+
+  );
+};
+
 export default CategoryItem;

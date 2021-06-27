@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import  Link  from 'next/link';
+import  Link  from './Link';
 import { useRouter } from 'next/router'
 import './header.scss';
 // import logo from '../../../static/img/logo-codigo-red.svg';
@@ -9,6 +9,7 @@ const logo = "https://www.codigo.co/img/ui/logo-codigo-red.svg";
 const Header = () => {
 
     const [isOpenMenu, setIsOpenMenu] = useState(false);
+    const [isClickIcon, setIsClickIcon] = useState(false);
 
     
     const router = useRouter()
@@ -16,6 +17,9 @@ const Header = () => {
         // Router.push("/work")
        return router.pathname === '/work' ||   router.pathname === '/'
   
+    }
+    const handleNavIcon = () => {
+        setIsClickIcon(!isClickIcon);
     }
     return (
         <header >                
@@ -26,33 +30,47 @@ const Header = () => {
                             detectRoute() ?
                                 <img src={logo} className="App-logo" alt="logo" />    
                                 :                            
-                                <div className="back-icon">
+                                  <div className="back-icon">
                                     <div className="icon"/>
-                                    <p className="back-txt">back to work</p>
-                                </div>
+                                      <p className="back-txt">back to work</p>
+                                  </div>
                         }                        
                     </div>
                 </a>
                 <nav className="nav-list">       
-                    {
-                        isOpenMenu ?
-                        <div className="mobile-btn" onClick={()=> setIsOpenMenu(!isOpenMenu)}>                            
-                            <img src={close} alt="menu"/>                            
-                        </div>                        
-                        :
-                        <div className="mobile-btn" onClick={()=> setIsOpenMenu(!isOpenMenu)}>                                
-                            <img src={menu} className="close" alt="menu" />                                
-                        </div>                                                        
-                    }                                                                                             
+                
+                           <div className={isOpenMenu ?"ci_show": "ci_none"}>
+
+                           </div>             
+                          <selection className={'hbg_menu'} onClick={()=> setIsOpenMenu(!isOpenMenu)}>
+                               <div className={'circle'} onClick={()=> setIsOpenMenu(!isOpenMenu)} >
+                              
+                               <div id="nav-icon" onClick={handleNavIcon} onClick={()=> setIsOpenMenu(!isOpenMenu)} className={`${isOpenMenu?"op":""}`}>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                     <span></span>
+                                </div>  
+                                </div>  
+                           </selection>     
+                                                                
+                              
+                                                                          
                     <ul className={isOpenMenu ? "open" : ""}>                            
                         <li className={detectRoute() ? '':'detail'}>
-                            <a href="/work?tags=all">Work</a>
+                            <Link href="/work" activeClassName="active">
+                            <a> Work </a>
+                            </Link>
                         </li>
                         <li className={detectRoute() ? '':'detail'}>
-                            <a href="/solutions">Solutions</a>
+                           <Link href="/solutions" activeClassName="active">
+                             <a >Solutions</a>
+                           </Link>
                         </li>
                         <li className={detectRoute() ? '':'detail'}>
-                            <a href="/services">Services</a>
+                           <Link href="/services" activeClassName="active">
+                           <a >Services</a>
+                           </Link>
                         </li>
                         <li className={detectRoute() ? '':'detail'}>
                             <a href="/about">about us</a>

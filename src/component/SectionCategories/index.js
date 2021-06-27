@@ -22,7 +22,9 @@ const SectionCategories = ({ searchParam, getData, data, slidebarClick }) => {
 
         return (
             data.length > 0 ? data.map((item,index)=> (
-                <CategoryItem item={item} key={index} />                
+                
+                     <CategoryItem item={item} key={index} /> 
+                   
             )): <div className="nofound">
                 <Fade bottom>
                 
