@@ -73,7 +73,7 @@ const Header = () => {
                            </Link>
                         </li>
                         <li className={detectRoute() ? '':'detail'}>
-                            <a href="/about">about us</a>
+                            <a href="/about">About us</a>
                         </li>
                         <li className={detectRoute() ? '':'detail'}>
                             <a href="/blog">Blog</a>

@@ -13,22 +13,22 @@ const CategoryItem = (props) => {
         <Link  href={`/work/[slug]`} as={`/work/${props.item.slug}`}>
           <a
            
-            className={`cat-item  ${
+            className={`cat-item ${
               props.item.name == "7Rewards" ? "reward" : props.item.name
             }`}
           >
-             <Fade>
+             {/* <Fade> */}
              <div className={`title`}>
               <p
                 className={`${
-                  props.item.txt_color == "#000" ? "c_black" : "c_white"
+                  props.item.text_color == "#000000" ? "c_black" : "c_white"
                 }`}
               >
                 {props.item.txt}
               </p>
               <h5
                 className={`${
-                  props.item.txt_color == "#000" ? "c_black" : "c_white"
+                  props.item.text_color == "#000000" ? "c_black" : "c_white"
                 }`}
               >
                 {props.item.name}
@@ -37,17 +37,18 @@ const CategoryItem = (props) => {
 
             <img
               className={"work_grid_bg"}
-              src={props.item.bg_url}
+              src={props.item.image?.normal}
               alt={props.item.name}
             />
 
             <AvailablePlatform
-              mobile={props.item.mobile}
-              web={props.item.web}
-              cms={props.item.cms}
-              ui_ux={props.item.ui_ux}
+             roles={props.item?.roles}
+            //  mobile={props.item.role}
+            //  web={props.item.web}
+            //  cms={props.item.cms}
+            //  ui_ux={props.item.ui_ux}
             />
-             </Fade>
+             {/* </Fade> */}
           </a>
         </Link>
       </>

@@ -1,5 +1,5 @@
 import { GET_DATA } from './actionTypes';
-import { dataSet } from '../constants';
+import { dataSet, worksData } from '../constants';
 export const getData =  (keyword) => async dispatch => {
   
   
@@ -7,9 +7,9 @@ export const getData =  (keyword) => async dispatch => {
 
     let myData;
     if(keyword !== 'all') {
-      myData = dataSet.filter((data) => data.keyword.find((data) => data === keyword ) )
+      myData = worksData.filter((data) => data.categories.find((data) => data.slug === keyword ) )
     } else {
-      myData = dataSet;
+      myData = worksData;
     }
     console.log("here is data and key:", myData, keyword)
     dispatch({

@@ -4,8 +4,8 @@
     min-height: 50vh;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 25% 25% 25% 25%;
-    grid-template-columns: 25% 25% 25% 25%;
+    // -ms-grid-columns: 25% 25% 25% 25%;
+    grid-template-columns: 50% 25% 25%;
     grid-auto-flow: row dense;
  
 }
