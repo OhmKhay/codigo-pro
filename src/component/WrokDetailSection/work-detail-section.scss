@@ -1,18 +1,59 @@
 ::selection {
     color: #00f;
   }
-
-  .btn_wrapper {
-    width: 100px;
-    height: 100px;
-    position: fixed;
+  .mob_btn {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 4rem 0rem;
+      display: none;
+      @media (max-width: 36rem) {
+        display: flex;
+      }
+      
+      
+  }
+  .mob_prev, .mob_next {
+    width: 60px;
+    height: 60px;
+    margin: 0rem 3rem;
     border-radius: 50%;
     background-color: #e43333;
     background-repeat: no-repeat;
     background-size: 13px 8px;
     cursor: pointer;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+         box-shadow: 0 10px 6px -6px #777;
+
+   }
+  .btn_wrapper {
+    width: 100px;
+    height: 100px;
+    &:hover {
+        width: 110px;
+        height: 110px;
+        transition: 0.5s;
+    }
+    position: fixed;
+    border-radius: 50%;
+    background-color: #e43333;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+         box-shadow: 0 10px 6px -6px #777;
+    background-size: 13px 8px;
+    cursor: pointer;
   }
-  .prev {
+  .mob_prev {
+    background-image: url('https://www.codigo.co/img/ui/arrow-left-white.svg');
+    background-position: 50% 50%;
+  }
+  .mob_next {
+    background-image: url('https://www.codigo.co/img/ui/arrow-right-white.svg');
+    background-position: 50% 50%;
+  }
+  .prev{
     left: 0;
     margin-left: -50px;
     background-image: url('https://www.codigo.co/img/ui/arrow-left-white.svg');
@@ -29,6 +70,7 @@
     top: 50vh;
     margin-top: -50px;
     z-index: 1;
+ 
     position: fixed;
     pointer-events: all;
     @media (max-width: 36rem) {

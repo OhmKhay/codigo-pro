@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import  Link  from './Link';
-import { useRouter } from 'next/router'
+import Fade from 'react-reveal/Fade';
+import { useRouter } from 'next/router';
+import { socialMobile } from '../../constants/socialData';
+
 import './header.scss';
+import SocialInfo from '../Footer/SocialInfo';
 const logo = "https://www.codigo.co/img/ui/logo-codigo-red.svg";
 const Header = () => {
 
@@ -54,6 +58,7 @@ const Header = () => {
                               
                                                                           
                     <ul className={isOpenMenu ? "open" : ""}>                            
+                        <Fade bottom>
                         <li className={detectRoute() ? '':'detail'}>
                             <Link href="/work" activeClassName="active">
                             <a> Work </a>
@@ -81,6 +86,15 @@ const Header = () => {
                         <li className={detectRoute() ? 'mobile':'detail mobile'}>
                             <a href="/">Let's chat</a>
                         </li>
+                        <li className={detectRoute() ? 'mobile':'detail mobile'}>
+                          <div className={'socialIcon'}>
+                             {socialMobile.map((data) => {
+                                 return <a href={data.link}>
+                                    <img src={data.url} />
+                                 </a>
+                             })}
+                          </div>
+                        </li>
                         <li className="quote">
                             <a href="/blog">
                                 <button>
@@ -88,6 +102,8 @@ const Header = () => {
                                 </button>
                             </a>
                         </li>
+                     
+                        </Fade>
                     </ul>
                 </nav>
             </div>

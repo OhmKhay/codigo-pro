@@ -11,6 +11,19 @@
     
 }
 
+.socialIcon {
+    display: flex;
+    padding: 1rem;
+ 
+    img {
+        width: 20px;
+        height: 20px;
+      
+        padding: 0rem 2rem;
+    
+    }
+}
+
 .active {
     font-weight: 700;
     color: #000;

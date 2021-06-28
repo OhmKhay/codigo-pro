@@ -11,7 +11,6 @@ const WorkDetailSection = ({data}) => {
     const [timmer, setTimer] = useState(false);
     const [topState, setTopState] = useState(false);
 
-  
 
     useEffect(() => {
         let scrollNum = true;
@@ -64,7 +63,8 @@ const WorkDetailSection = ({data}) => {
             </div>
             </Fade>
             <Fade right>
-              <div  onClick={() => {
+              <div 
+               onClick={() => {
                 return Router.push(`/work/${data.next_post_slug}`)
             }} className={'next btn_wrapper'}>
 
@@ -126,6 +126,22 @@ const WorkDetailSection = ({data}) => {
                 </div>
             </div>
 
+           <div className={'mob_btn'}>
+                <div 
+                onClick={() => {
+                  return Router.push(`/work/${data.prev_post_slug}`)
+              }}
+                className="mob_prev">
+
+                </div>
+                <div 
+                onClick={() => {
+                  return Router.push(`/work/${data.next_post_slug}`)
+                }}
+                className={'mob_next'}>
+
+                </div>
+           </div>
         
         </section>
     );

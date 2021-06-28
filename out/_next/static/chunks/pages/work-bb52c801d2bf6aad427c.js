@@ -1,0 +1,1 @@
+_N_E=(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[12],{"3pe6":function(n,c,e){"use strict";e.r(c);var t=e("nKUr"),_=(e("q1tI"),e("1IkB")),o=e("jeCR");c.default=function(){return Object(t.jsx)(o.a,{children:Object(t.jsx)(_.a,{})})}},gbc6:function(n,c,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/work",function(){return e("3pe6")}])}},[["gbc6",0,1,2,5,4,6,3]]]);
