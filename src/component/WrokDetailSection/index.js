@@ -24,7 +24,7 @@ const WorkDetailSection = ({data}) => {
             scrollNum && setTopState(true)
       
           } 
-          if(scrolled >= 800) {
+          if(scrolled >= 200) {
               scrollNum && setTopState(false);
           }
          
@@ -70,6 +70,7 @@ const WorkDetailSection = ({data}) => {
 
                </div>
                 </Fade>
+
                 </>
             }
             <div className="detail-layout">
