@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import  Link  from './Link';
 import { useRouter } from 'next/router'
 import './header.scss';
-// import logo from '../../../static/img/logo-codigo-red.svg';
-import menu from '../../../static/menu.png';
-import close from '../../../static/close.png';
 const logo = "https://www.codigo.co/img/ui/logo-codigo-red.svg";
 const Header = () => {
 
@@ -14,7 +11,7 @@ const Header = () => {
     
     const router = useRouter()
     const detectRoute = () => {
-        // Router.push("/work")
+       
        return router.pathname === '/work' ||   router.pathname === '/'
   
     }

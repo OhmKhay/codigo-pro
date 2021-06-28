@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Router, { useRouter } from 'next/router';
 import { connect } from 'react-redux';
+import Fade from 'react-reveal/Fade'
 import { services } from '../../constants';
 import { getData } from '../../actions/getData';
 import Legend from '../../component/Categories/Legend';
@@ -30,6 +31,7 @@ const SlideBar = ({ handleClickSliderBar, handleChidOpenMenu, getData }) => {
             
                  className={`WorkFilterAndLegend__mainGridWrapper WorkFilterAndLegend--isVertical ${isOpenMenu?'open':'close'}`}>
                      <section className="cat_list">
+                          <Fade left>
                           <ul>
                               {
                                   services.map((item, index) =>(
@@ -57,6 +59,7 @@ const SlideBar = ({ handleClickSliderBar, handleChidOpenMenu, getData }) => {
 
                               <Legend />
                           </ul>
+                          </Fade>
                       </section>
                      <div className={'WorkFilterBall__mainWrapper'} onClick={handleMenu}>
                     
@@ -65,7 +68,8 @@ const SlideBar = ({ handleClickSliderBar, handleChidOpenMenu, getData }) => {
                      </p>
                      </div>
              
-               </section>}
+               </section>
+               }
        </section>
     )
 }

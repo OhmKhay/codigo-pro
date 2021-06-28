@@ -4,10 +4,15 @@
     min-height: 50vh;
     display: -ms-grid;
     display: grid;
-    // -ms-grid-columns: 25% 25% 25% 25%;
-    grid-template-columns: 50% 25% 25%;
+
+    grid-template-columns: 25% 25% 25% 25%;
     grid-auto-flow: row dense;
  
+}
+
+.workGrid__colWidth--span2 {
+    -ms-grid-column-span: 2;
+    grid-column: span 2;
 }
 .nofound {
     // border: 1px solid red;
@@ -39,8 +44,6 @@
         min-height: 50vh;
         display: grid;
         grid-template-columns: 50% 50%;
-        // -ms-grid-columns: 25% 25% 25% 25%;
-        // grid-template-columns: 25% 25% 25% 25%;
         grid-auto-flow: row dense;
     }
 }

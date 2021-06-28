@@ -6,11 +6,15 @@
 .c_white {
     color: #fff;
 }
+.react-reveal:hover {
+    img {
+        
+    }
+}
 .cat-item{
     min-height: 468px;    
     position: relative;
     overflow: hidden;
-    grid-template-columns: 50% 25% 25%;
     animation-delay: 0.235131s;
     animation-duration: 2s;        
     .title{
@@ -78,16 +82,8 @@
    
 }
 
-.Singapore{
-    grid-column: span 2;
-}
-.League{
-    grid-column: span 2;
-}
-.FastFast{
-    grid-column: span 2;
-}
-.Charles{
+
+.workGrid__colWidth--span2 {
     grid-column: span 2;
 }
 .FairPrice{

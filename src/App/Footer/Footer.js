@@ -5,7 +5,11 @@ import './app-footer.scss';
 const Footer = () => {
 
         return (
-            <footer className="footer_con footer">
+          <section style={{
+              width: '100%',
+              backgroundColor: "#fafafafa"
+          }}>
+                <footer className="footer_con footer">
                 <div>
                     <h5 className="title">Let’s have a chat</h5>
                 </div>                
@@ -35,6 +39,7 @@ const Footer = () => {
                     <p>+65 6455 9790 • 26 Sin Ming Lane, Midview City #07-115 Singapore 573971</p>
                 </div>
             </footer>
+          </section>
         );
 }
  

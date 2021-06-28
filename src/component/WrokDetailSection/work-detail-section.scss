@@ -2,6 +2,39 @@
     color: #00f;
   }
 
+  .btn_wrapper {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    border-radius: 50%;
+    background-color: #e43333;
+    background-repeat: no-repeat;
+    background-size: 13px 8px;
+    cursor: pointer;
+  }
+  .prev {
+    left: 0;
+    margin-left: -50px;
+    background-image: url('https://www.codigo.co/img/ui/arrow-left-white.svg');
+    background-position: 70% 50%;
+  }
+  .next {
+    right: 0;
+    margin-right: -50px;
+    background-image: url('https://www.codigo.co/img/ui/arrow-right-white.svg');
+    background-position: 30% 50%;
+  }
+  .next,.prev {
+    position: absolute;
+    top: 50vh;
+    margin-top: -50px;
+    z-index: 1;
+    position: fixed;
+    pointer-events: all;
+    @media (max-width: 36rem) {
+        display: none;
+    }
+  }
   a {
     text-decoration: none;
     color: #272727;
@@ -195,6 +228,8 @@
                     transform: translateX(-100%);
                     position: relative;
                     order: 2;
+                    top: -6%;
+                    left: 0%;
                     margin-bottom: 130px;
                 }             
                 width: 48vw;
@@ -202,8 +237,10 @@
                 max-width: 580px;
                 max-height: 580px;
                 position: absolute;
-                top: 32%;
-                left: 58%;
+                // top: 32%;
+                top: -20%;
+                left: 6%;
+                // left: 58%;
                 transform: translate(-50%,-50%);
                 border-radius: 50%;
                 position: relative;

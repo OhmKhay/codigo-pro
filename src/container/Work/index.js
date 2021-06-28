@@ -25,6 +25,7 @@ const Work = () => {
     const handleOpenMenu = (value) => {
         setOpenMenu(value);
     }
+    
     useEffect(() => {
       let scrollNum = true;
   

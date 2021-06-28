@@ -6,25 +6,30 @@ import AvailablePlatform from "./AvailablePlatform";
 import "./category-item.scss";
 
 const CategoryItem = (props) => {
- 
+
   return (
 
       <>
-        <Link  href={`/work/[slug]`} as={`/work/${props.item.slug}`}>
+   
+        <Link  href={`/work/[slug]`} as={`/work/${'ocbc-pay-anyone'}`}>
           <a
            
             className={`cat-item ${
-              props.item.name == "7Rewards" ? "reward" : props.item.name
+              props.item.grid_size === 0.5 ? "workGrid__colWidth--span2" : ""
             }`}
           >
-             {/* <Fade> */}
+
              <div className={`title`}>
               <p
                 className={`${
                   props.item.text_color == "#000000" ? "c_black" : "c_white"
                 }`}
               >
-                {props.item.txt}
+                {props.item.categories.map((item, index) => {
+                    return (
+                      <span key={`demo_snap_${index}`} dangerouslySetInnerHTML={{ __html:  (index ? ', ' : '') + item.name }} />
+                    )
+                })}
               </p>
               <h5
                 className={`${
@@ -34,23 +39,21 @@ const CategoryItem = (props) => {
                 {props.item.name}
               </h5>
             </div>
-
+          
             <img
               className={"work_grid_bg"}
               src={props.item.image?.normal}
               alt={props.item.name}
             />
-
+           
             <AvailablePlatform
              roles={props.item?.roles}
-            //  mobile={props.item.role}
-            //  web={props.item.web}
-            //  cms={props.item.cms}
-            //  ui_ux={props.item.ui_ux}
+           
             />
-             {/* </Fade> */}
+            
           </a>
         </Link>
+   
       </>
 
   );

@@ -5,6 +5,7 @@ import AppFooter from '../../components/AppFooter';
 import SectionCategories from '../../components/SectionCategories';
  
 class HomePage extends Component {
+    
     render() { 
         return (
             <div>
